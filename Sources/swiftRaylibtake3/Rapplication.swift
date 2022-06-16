@@ -7,19 +7,18 @@
 
 import Foundation
 import Raylib
-
-//import physac
-//import physac
+import enablePhysac
 
 struct Rapplication {
     static let rappHeight: Int32 = 1080
     static let rappWidth: Int32 =  1920
-
+    
     static func launchRapp() {
 
         Raylib.initWindow(rappWidth, rappHeight, "Raylib swift 2d example!")
-        InitPhysics()
         
+//        InitPhysics()
+        InitPhysics()
 
         var player = Player(
             position: Vector2(x: 400, y: 280),
