@@ -3,32 +3,33 @@
 
 import PackageDescription
 
-//let cSettings: [CSetting] = [.define("PHYSAC_IMPLEMENTATION")]
 let package = Package(
-    name: "swiftRaylibtake3",
+    name: "SwiftRayPackage",
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
-        .executable(
-            name: "swiftRaylibtake3",
-            targets: ["swiftRaylibtake3"]),
+        .library(
+            name: "SwiftRayPackage",
+            targets: ["SwiftRayPackage"]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
         .package(name: "Raylib", url: "https://github.com/STREGAsGate/Raylib.git", .branch("master")),
-
+        // .package(url: /* package url */, from: "1.0.0"),
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
-            name: "enablePhysac",
+            name: "ExtraHeaders",
             dependencies: ["Raylib"]),
-//        cSettings: cSettings),
         .target(
-            name: "swiftRaylibtake3",
-            dependencies: ["Raylib", "enablePhysac"]),
+            name: "PhysacSwiftBindings",
+            dependencies: ["ExtraHeaders", "Raylib"]),
+        .target(
+            name: "SwiftRayPackage",
+            dependencies: ["Raylib", "PhysacSwiftBindings"]),
         .testTarget(
-            name: "swiftRaylibtake3Tests",
-            dependencies: ["swiftRaylibtake3"]),
+            name: "SwiftRayPackageTests",
+            dependencies: ["SwiftRayPackage"]),
     ]
 )

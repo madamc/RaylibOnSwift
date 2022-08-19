@@ -1,6 +1,7 @@
-public struct swiftRaylibtake3 {
+public struct SwiftRayPackage {
     public private(set) var text = "Hello, World!"
 
     public init() {
     }
 }
+

@@ -7,18 +7,18 @@
 
 import Foundation
 import Raylib
-import enablePhysac
+import ExtraHeaders
 
-struct Rapplication {
+public struct Rapplication {
     static let rappHeight: Int32 = 1080
     static let rappWidth: Int32 =  1920
     
-    static func launchRapp() {
-
+    public static func launchRapp() {
+        
         Raylib.initWindow(rappWidth, rappHeight, "Raylib swift 2d example!")
         
-//        InitPhysics()
         InitPhysics()
+//        InitPhysics()
 
         var player = Player(
             position: Vector2(x: 400, y: 280),
@@ -96,18 +96,20 @@ struct Rapplication {
 
             Raylib.beginDrawing()
 
-                Raylib.clearBackground(.lightGray)
-                
-                Raylib.beginMode2D(camera)
+            Raylib.clearBackground(.lightGray)
+            
+            Raylib.beginMode2D(camera)
 
-                for i in 0...envItemsCount-1 {
-                    Raylib.drawRectangleRec(envItems[i].rect, envItems[i].color)
-                }
+            for i in 0...envItemsCount-1 {
+                Raylib.drawRectangleRec(envItems[i].rect, envItems[i].color)
+            }
 
-                var playerRect: Rectangle = Rectangle(x: player.position.x - 20, y: player.position.y - 20, width: 40, height: 40)
-                Raylib.drawRectangleRec(playerRect, .red)
+            var playerRect: Rectangle = Rectangle(x: player.position.x - 20, y: player.position.y - 20, width: 40, height: 40)
+            Raylib.drawRectangleRec(playerRect, .red)
 
-                Raylib.endMode2D()
+            var colorVal = Color.red
+            
+            Raylib.endMode2D()
 
             Raylib.endDrawing()
         }

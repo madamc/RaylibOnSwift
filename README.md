@@ -1,3 +1,3 @@
-# swiftRaylibtake3
+# SwiftRayPackage
 
 A description of this package.

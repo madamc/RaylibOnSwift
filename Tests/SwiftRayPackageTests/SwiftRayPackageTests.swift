@@ -1,11 +1,11 @@
 import XCTest
-@testable import swiftRaylibtake3
+@testable import SwiftRayPackage
 
-final class swiftRaylibtake3Tests: XCTestCase {
+final class SwiftRayPackageTests: XCTestCase {
     func testExample() throws {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct
         // results.
-        XCTAssertEqual(swiftRaylibtake3().text, "Hello, World!")
+        XCTAssertEqual(SwiftRayPackage().text, "Hello, World!")
     }
 }
